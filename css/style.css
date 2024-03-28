@@ -249,19 +249,32 @@ textarea.input {
   clip-path: polygon(0 0,0 100%,100% 100%);
   background: hsla(0,0%,0%,.75)
 }
+.footer {
+  text-align: center
+}
+.footer__container {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem
+}
 .footer__list {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem
+  margin-bottom: 1.875rem
 }
 .footer__link {
   line-height: 1.4;
   letter-spacing: -.3px;
   color: #fff;
+  transition: color .3s
+}
+.footer__copy {
+  line-height: 1.4;
+  color: rgba(255,255,255,.4431372549)
+}
+.footer__copy-link {
   transition: color .3s
 }
 .hero__container {
@@ -512,17 +525,20 @@ textarea.input {
   .img-before-left::before {
     height: 23rem
   }
+  .footer__container {
+    padding-top: 9.375rem
+  }
+  .footer__container {
+    padding-bottom: 9.375rem
+  }
   .footer__list {
     gap: 1.875rem
   }
-  .footer__list {
-    padding-top: 9.375rem
-  }
-  .footer__list {
-    padding-bottom: 9.375rem
-  }
   .footer__link {
     font-size: 1.875rem
+  }
+  .footer__copy {
+    font-size: 1.5rem
   }
   .page__hero {
     padding-top: 2.5rem
@@ -739,17 +755,20 @@ textarea.input {
   .img-before-left::before {
     height: 9.375rem
   }
+  .footer__container {
+    padding-top: 2.5rem
+  }
+  .footer__container {
+    padding-bottom: 2.5rem
+  }
   .footer__list {
     gap: .9375rem
   }
-  .footer__list {
-    padding-top: 2.5rem
-  }
-  .footer__list {
-    padding-bottom: 2.5rem
-  }
   .footer__link {
     font-size: 1.5rem
+  }
+  .footer__copy {
+    font-size: 1.25rem
   }
   .page__hero {
     padding-top: 1.25rem
@@ -1154,6 +1173,26 @@ textarea.input {
       height: calc(9.375rem + 13.625 * (100vw - 20rem)/ 97.5)
     }
   }
+  @supports (padding-top:clamp(2.5rem ,1.0897435897rem + 7.0512820513vw ,9.375rem)) {
+    .footer__container {
+      padding-top: clamp(2.5rem ,1.0897435897rem + 7.0512820513vw ,9.375rem)
+    }
+  }
+  @supports not (padding-top:clamp(2.5rem ,1.0897435897rem + 7.0512820513vw ,9.375rem)) {
+    .footer__container {
+      padding-top: calc(2.5rem + 6.875 * (100vw - 20rem)/ 97.5)
+    }
+  }
+  @supports (padding-bottom:clamp(2.5rem ,1.0897435897rem + 7.0512820513vw ,9.375rem)) {
+    .footer__container {
+      padding-bottom: clamp(2.5rem ,1.0897435897rem + 7.0512820513vw ,9.375rem)
+    }
+  }
+  @supports not (padding-bottom:clamp(2.5rem ,1.0897435897rem + 7.0512820513vw ,9.375rem)) {
+    .footer__container {
+      padding-bottom: calc(2.5rem + 6.875 * (100vw - 20rem)/ 97.5)
+    }
+  }
   @supports (gap:clamp(0.9375rem ,0.7451923077rem + 0.9615384615vw ,1.875rem)) {
     .footer__list {
       gap: clamp(.9375rem ,.7451923077rem + .9615384615vw ,1.875rem)
@@ -1164,26 +1203,6 @@ textarea.input {
       gap: calc(.9375rem + .9375 * (100vw - 20rem)/ 97.5)
     }
   }
-  @supports (padding-top:clamp(2.5rem ,1.0897435897rem + 7.0512820513vw ,9.375rem)) {
-    .footer__list {
-      padding-top: clamp(2.5rem ,1.0897435897rem + 7.0512820513vw ,9.375rem)
-    }
-  }
-  @supports not (padding-top:clamp(2.5rem ,1.0897435897rem + 7.0512820513vw ,9.375rem)) {
-    .footer__list {
-      padding-top: calc(2.5rem + 6.875 * (100vw - 20rem)/ 97.5)
-    }
-  }
-  @supports (padding-bottom:clamp(2.5rem ,1.0897435897rem + 7.0512820513vw ,9.375rem)) {
-    .footer__list {
-      padding-bottom: clamp(2.5rem ,1.0897435897rem + 7.0512820513vw ,9.375rem)
-    }
-  }
-  @supports not (padding-bottom:clamp(2.5rem ,1.0897435897rem + 7.0512820513vw ,9.375rem)) {
-    .footer__list {
-      padding-bottom: calc(2.5rem + 6.875 * (100vw - 20rem)/ 97.5)
-    }
-  }
   @supports (font-size:clamp(1.5rem ,1.4230769231rem + 0.3846153846vw ,1.875rem)) {
     .footer__link {
       font-size: clamp(1.5rem ,1.4230769231rem + .3846153846vw ,1.875rem)
@@ -1192,6 +1211,16 @@ textarea.input {
   @supports not (font-size:clamp(1.5rem ,1.4230769231rem + 0.3846153846vw ,1.875rem)) {
     .footer__link {
       font-size: calc(1.5rem + .375 * (100vw - 20rem)/ 97.5)
+    }
+  }
+  @supports (font-size:clamp(1.25rem ,1.1987179487rem + 0.2564102564vw ,1.5rem)) {
+    .footer__copy {
+      font-size: clamp(1.25rem ,1.1987179487rem + .2564102564vw ,1.5rem)
+    }
+  }
+  @supports not (font-size:clamp(1.25rem ,1.1987179487rem + 0.2564102564vw ,1.5rem)) {
+    .footer__copy {
+      font-size: calc(1.25rem + .25 * (100vw - 20rem)/ 97.5)
     }
   }
   @supports (padding-top:clamp(1.25rem ,0.9935897436rem + 1.2820512821vw ,2.5rem)) {
@@ -1724,6 +1753,9 @@ textarea.input {
     color: #377de5
   }
   .footer__link:hover {
+    color: #ff4a4a
+  }
+  .footer__copy-link:hover {
     color: #ff4a4a
   }
   .contact__link:hover {
