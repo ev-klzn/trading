@@ -6,4 +6,4 @@ Allow: /
 Allow: /*.css
 Allow: /*.webp
 
-https://ev-klzn.github.io/trading/
+Host: https://ev-klzn.github.io/trading/

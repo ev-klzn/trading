@@ -1,3 +1,3 @@
 # trading
 
-Host: https://ev-klzn.github.io/trading/
+https://ev-klzn.github.io/trading/
