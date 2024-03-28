@@ -101,7 +101,6 @@ body {
 }
 .button {
   background: url(../img/bgBlue.svg) 0 0/cover no-repeat;
-  width: 6.25%rem;
   padding: 0 0;
   color: #ff4a4a;
   transition: all .3s

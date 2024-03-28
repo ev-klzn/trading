@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240328131010">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240328133519">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -242,32 +242,34 @@
 			</section>
 			<section class="page__submit submit">
 				<div class="submit__container">
-					<h3 class="submit__title title"></h3>
+					<h3 class="submit__title title">Submit Enrollment Info</h3>
 					<div class="submit__body">
-						<form class="submit__form" action="files/sendmail/sendmail.php" method="POST">
+						<form id="form" class="submit__form" action="files/sendmail/sendmail.php" method="POST">
 							<div class="submit__list">
 								<div data-watch class="submit__info">
 									<label class="submit__label" for="name">Name *</label>
-									<input type="text" name="name" data-error="Error" placeholder="Jon" class="input">
+									<input id="name" type="text" name="name" data-error="Error" placeholder="Jon" class="input">
 								</div>
 
 								<div data-watch class="submit__info">
-									<label class="submit__label" for="form[email]">Email *</label>
-									<input type="text" name="form[email]" data-error="Error" placeholder="jon@mail.com" class="input">
+									<label class="submit__label" for="email">Email *</label>
+									<input id="email" type="text" name="form[email]" data-error="Error" placeholder="jon@mail.com" class="input">
 								</div>
 
 								<div data-watch class="submit__info">
-									<label class="submit__label" for="name">Phone number *</label>
-									<input type="tel" name="name" data-error="Error" placeholder="Phone number" class="input">
+									<label class="submit__label" for="phone">Phone number *</label>
+									<input id="phone" type="tel" name="name" data-error="Error" placeholder="Phone number" class="input">
 								</div>
 
 								<div data-watch class="submit__info">
 									<label class="submit__label" for="message">Message *</label>
-									<textarea class="submit__massage" type="text" name="message" required placeholder="More info">
+									<textarea id="message" class="submit__massage" name="message" required placeholder="More info">
                     </textarea>
 								</div>
 							</div>
-							<button data-watch type="submit" class="button">Join the Course</button>
+							<button data-watch form="form" type="submit" class="button">
+								Join the Course
+							</button>
 						</form>
 					</div>
 				</div>
@@ -278,7 +280,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240328131010"></script>
+	<script src="js/app.min.js?_v=20240328133519"></script>
 </body>
 
 </html>
