@@ -228,6 +228,8 @@ textarea.input {
 .img-before-right::before {
   content: "";
   position: absolute;
+  margin-right: -.0625rem;
+  margin-bottom: -.0625rem;
   z-index: 5;
   right: 0;
   bottom: 0;
@@ -238,7 +240,8 @@ textarea.input {
 .img-before-left::before {
   content: "";
   position: absolute;
-  margin-right: 1.1875rem;
+  margin-left: -.0625rem;
+  margin-bottom: -.0625rem;
   z-index: 5;
   left: 0;
   bottom: 0;
