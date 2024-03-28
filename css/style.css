@@ -99,6 +99,64 @@ body {
   margin: 0 auto;
   padding: 0 1.25rem
 }
+.button {
+  background: url(../img/bgBlue.svg) 0 0/cover no-repeat;
+  width: 6.25%rem;
+  padding: 0 0;
+  color: #ff4a4a;
+  transition: all .3s
+}
+.button--fw {
+  width: 100%
+}
+input[type=email],
+input[type=tel],
+input[type=text],
+textarea {
+  -webkit-appearance: none;
+  appearance: none
+}
+.input {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-radius: 0!important;
+  width: 100%;
+  display: block;
+  padding: 0 20px;
+  border: 1px solid rgba(255,255,255,.1294117647);
+  caret-color: inherit
+}
+.input[placeholder]:not([data-placeholder-nohiden])::-webkit-input-placeholder {
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s
+}
+.input[placeholder]:not([data-placeholder-nohiden]):-ms-input-placeholder {
+  -ms-transition: opacity .3s;
+  transition: opacity .3s
+}
+.input[placeholder]:not([data-placeholder-nohiden])::-ms-input-placeholder {
+  -ms-transition: opacity .3s;
+  transition: opacity .3s
+}
+.input[placeholder]:not([data-placeholder-nohiden])::placeholder {
+  transition: opacity .3s
+}
+.input[placeholder]:not([data-placeholder-nohiden]):focus::-webkit-input-placeholder {
+  opacity: 0
+}
+.input[placeholder]:not([data-placeholder-nohiden]):focus:-ms-input-placeholder {
+  opacity: 0
+}
+.input[placeholder]:not([data-placeholder-nohiden]):focus::-ms-input-placeholder {
+  opacity: 0
+}
+.input[placeholder]:not([data-placeholder-nohiden]):focus::placeholder {
+  opacity: 0
+}
+textarea.input {
+  resize: none;
+  padding: 0 0
+}
 .ibg {
   width: 100%;
   height: 100%;
@@ -316,15 +374,96 @@ body {
   flex-direction: column;
   justify-content: space-between
 }
-.contact__title {
-  margin-bottom: 1.25rem
-}
 .contact__link {
   transition: color .3s
 }
+.submit__form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem
+}
+.submit__list {
+  display: flex;
+  flex-wrap: wrap
+}
+.submit__info {
+  background: url(../img/bgBlue.svg) 0 0/cover no-repeat;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  flex: 1 1 25%;
+  color: #ff4a4a;
+  transition: all .3s
+}
+.submit__massage {
+  border: 1px solid rgba(255,255,255,.1294117647)
+}
+[class*=__item] {
+  -webkit-transform: translate(0,10%);
+  transform: translate(0,10%);
+  opacity: .5;
+  transition: all .2s
+}
+[class*=__item]._watcher-view {
+  transition: all .8s;
+  -webkit-transform: translate(0,0);
+  transform: translate(0,0);
+  opacity: 1
+}
+[class*=__img] {
+  opacity: 0;
+  transition: all .5s
+}
+[class*=__img]._watcher-view {
+  transition: all 1.5s;
+  -webkit-transform: translate(0,0);
+  transform: translate(0,0);
+  opacity: 1
+}
+.button,
+.submit__info {
+  -webkit-transform: translate(0,10%);
+  transform: translate(0,10%);
+  opacity: .5;
+  transition: all .2s
+}
+.button._watcher-view,
+.submit__info._watcher-view {
+  transition: all .8s;
+  -webkit-transform: translate(0,0);
+  transform: translate(0,0);
+  opacity: 1
+}
 @media (min-width:117.5em) {
+  .button {
+    padding-top: 3.125rem
+  }
+  .button {
+    padding-bottom: 3.125rem
+  }
+  .button {
+    padding-left: 3.75rem
+  }
+  .button {
+    padding-right: 3.75rem
+  }
   .title {
     font-size: 4.9375rem
+  }
+  .title--margin {
+    margin-left: -2.5rem
+  }
+  [class*=__title] {
+    padding-top: 2.8125rem
+  }
+  [class*=__title] {
+    padding-bottom: 2.8125rem
+  }
+  [class*=__title] {
+    padding-left: 1.875rem
+  }
+  [class*=__title] {
+    padding-right: 1.875rem
   }
   [class*=__item] {
     padding-top: 3.125rem
@@ -395,6 +534,12 @@ body {
   .page__contact {
     padding-bottom: 1.25rem
   }
+  .page__submit {
+    padding-top: 1.25rem
+  }
+  .page__submit {
+    padding-bottom: 1.25rem
+  }
   .hero__body {
     padding-top: 2.8125rem
   }
@@ -419,23 +564,20 @@ body {
   .career__body {
     padding-left: 1.875rem
   }
-  .career__title {
+  .career__body {
+    padding-right: 1.875rem
+  }
+  .why__body {
     padding-top: 2.8125rem
   }
-  .career__title {
+  .why__body {
     padding-bottom: 2.8125rem
   }
-  .career__title {
+  .why__body {
     padding-left: 1.875rem
   }
-  .why__title {
-    padding-top: 3.125rem
-  }
-  .why__title {
-    padding-bottom: 3.125rem
-  }
-  .why__title--padding {
-    padding-left: 3.75rem
+  .why__body {
+    padding-right: 1.875rem
   }
   .why__body {
     gap: 2.5rem
@@ -453,25 +595,22 @@ body {
     padding-bottom: 2.8125rem
   }
   .benefits__body {
-    padding-right: 1.875rem
-  }
-  .benefits__title {
-    padding-top: 2.8125rem
-  }
-  .benefits__title {
-    padding-bottom: 2.8125rem
-  }
-  .benefits__title {
     padding-left: 1.875rem
   }
-  .enrollment__title {
-    padding-top: 3.125rem
+  .benefits__body {
+    padding-right: 1.875rem
   }
-  .enrollment__title {
-    padding-bottom: 3.125rem
+  .enrollment__body {
+    padding-top: 2.8125rem
   }
-  .enrollment__title--padding {
-    padding-left: 3.75rem
+  .enrollment__body {
+    padding-bottom: 2.8125rem
+  }
+  .enrollment__body {
+    padding-left: 1.875rem
+  }
+  .enrollment__body {
+    padding-right: 1.875rem
   }
   .enrollment__body {
     gap: 2.5rem
@@ -491,10 +630,55 @@ body {
   .contact__body {
     padding-left: 1.875rem
   }
+  .contact__body {
+    padding-right: 1.875rem
+  }
+  .submit__list {
+    gap: 2.5rem
+  }
+  .submit__info {
+    padding-top: 3.125rem
+  }
+  .submit__info {
+    padding-bottom: 3.125rem
+  }
+  .submit__info {
+    padding-left: 3.75rem
+  }
+  .submit__info {
+    padding-right: 3.75rem
+  }
 }
 @media (max-width:20em) {
+  .button {
+    padding-top: 1.25rem
+  }
+  .button {
+    padding-bottom: 1.25rem
+  }
+  .button {
+    padding-left: 1.25rem
+  }
+  .button {
+    padding-right: 1.25rem
+  }
   .title {
     font-size: 1.75rem
+  }
+  .title--margin {
+    margin-left: -1.25rem
+  }
+  [class*=__title] {
+    padding-top: 1.25rem
+  }
+  [class*=__title] {
+    padding-bottom: 1.25rem
+  }
+  [class*=__title] {
+    padding-left: 1.25rem
+  }
+  [class*=__title] {
+    padding-right: 1.25rem
   }
   [class*=__item] {
     padding-top: 1.25rem
@@ -565,6 +749,12 @@ body {
   .page__contact {
     padding-bottom: .625rem
   }
+  .page__submit {
+    padding-top: .625rem
+  }
+  .page__submit {
+    padding-bottom: .625rem
+  }
   .hero__body {
     padding-top: 1.25rem
   }
@@ -589,23 +779,20 @@ body {
   .career__body {
     padding-left: 1.25rem
   }
-  .career__title {
+  .career__body {
+    padding-right: 1.25rem
+  }
+  .why__body {
     padding-top: 1.25rem
   }
-  .career__title {
+  .why__body {
     padding-bottom: 1.25rem
   }
-  .career__title {
+  .why__body {
     padding-left: 1.25rem
   }
-  .why__title {
-    padding-top: 1.875rem
-  }
-  .why__title {
-    padding-bottom: 1.875rem
-  }
-  .why__title--padding {
-    padding-left: 1.25rem
+  .why__body {
+    padding-right: 1.25rem
   }
   .why__body {
     gap: 1.25rem
@@ -623,25 +810,22 @@ body {
     padding-bottom: 1.25rem
   }
   .benefits__body {
+    padding-left: 1.25rem
+  }
+  .benefits__body {
     padding-right: 1.25rem
   }
-  .benefits__title {
+  .enrollment__body {
     padding-top: 1.25rem
   }
-  .benefits__title {
+  .enrollment__body {
     padding-bottom: 1.25rem
   }
-  .benefits__title {
+  .enrollment__body {
     padding-left: 1.25rem
   }
-  .enrollment__title {
-    padding-top: 1.875rem
-  }
-  .enrollment__title {
-    padding-bottom: 1.875rem
-  }
-  .enrollment__title--padding {
-    padding-left: 1.25rem
+  .enrollment__body {
+    padding-right: 1.25rem
   }
   .enrollment__body {
     gap: 1.25rem
@@ -660,6 +844,29 @@ body {
   }
   .contact__body {
     padding-left: 1.25rem
+  }
+  .contact__body {
+    padding-right: 1.25rem
+  }
+  .submit__list {
+    gap: 1.25rem
+  }
+  .submit__info {
+    padding-top: 1.25rem
+  }
+  .submit__info {
+    padding-bottom: 1.25rem
+  }
+  .submit__info {
+    padding-left: 1.25rem
+  }
+  .submit__info {
+    padding-right: 1.25rem
+  }
+}
+@media (max-width:61.99875em) {
+  .submit__info {
+    flex: 1 1 40%
   }
 }
 @media (max-width:47.99875em) {
@@ -687,7 +894,8 @@ body {
     padding: 0
   }
   .why__body {
-    flex-direction: column
+    flex-direction: column;
+    padding: 0
   }
   .benefits__container {
     gap: 1.875rem;
@@ -697,7 +905,8 @@ body {
     padding: 0
   }
   .enrollment__body {
-    flex-direction: column
+    flex-direction: column;
+    padding: 0
   }
   .contact__container {
     gap: 1.875rem;
@@ -706,8 +915,51 @@ body {
   .contact__body {
     padding: 0
   }
+  .submit__info {
+    flex: 1 1 90%
+  }
 }
 @media (min-width:20em) and (max-width:117.5em) {
+  @supports (padding-top:clamp(1.25rem ,0.8653846154rem + 1.9230769231vw ,3.125rem)) {
+    .button {
+      padding-top: clamp(1.25rem ,.8653846154rem + 1.9230769231vw ,3.125rem)
+    }
+  }
+  @supports not (padding-top:clamp(1.25rem ,0.8653846154rem + 1.9230769231vw ,3.125rem)) {
+    .button {
+      padding-top: calc(1.25rem + 1.875 * (100vw - 20rem)/ 97.5)
+    }
+  }
+  @supports (padding-bottom:clamp(1.25rem ,0.8653846154rem + 1.9230769231vw ,3.125rem)) {
+    .button {
+      padding-bottom: clamp(1.25rem ,.8653846154rem + 1.9230769231vw ,3.125rem)
+    }
+  }
+  @supports not (padding-bottom:clamp(1.25rem ,0.8653846154rem + 1.9230769231vw ,3.125rem)) {
+    .button {
+      padding-bottom: calc(1.25rem + 1.875 * (100vw - 20rem)/ 97.5)
+    }
+  }
+  @supports (padding-left:clamp(1.25rem ,0.7371794872rem + 2.5641025641vw ,3.75rem)) {
+    .button {
+      padding-left: clamp(1.25rem ,.7371794872rem + 2.5641025641vw ,3.75rem)
+    }
+  }
+  @supports not (padding-left:clamp(1.25rem ,0.7371794872rem + 2.5641025641vw ,3.75rem)) {
+    .button {
+      padding-left: calc(1.25rem + 2.5 * (100vw - 20rem)/ 97.5)
+    }
+  }
+  @supports (padding-right:clamp(1.25rem ,0.7371794872rem + 2.5641025641vw ,3.75rem)) {
+    .button {
+      padding-right: clamp(1.25rem ,.7371794872rem + 2.5641025641vw ,3.75rem)
+    }
+  }
+  @supports not (padding-right:clamp(1.25rem ,0.7371794872rem + 2.5641025641vw ,3.75rem)) {
+    .button {
+      padding-right: calc(1.25rem + 2.5 * (100vw - 20rem)/ 97.5)
+    }
+  }
   @supports (font-size:clamp(1.75rem ,1.0961538462rem + 3.2692307692vw ,4.9375rem)) {
     .title {
       font-size: clamp(1.75rem ,1.0961538462rem + 3.2692307692vw ,4.9375rem)
@@ -716,6 +968,56 @@ body {
   @supports not (font-size:clamp(1.75rem ,1.0961538462rem + 3.2692307692vw ,4.9375rem)) {
     .title {
       font-size: calc(1.75rem + 3.1875 * (100vw - 20rem)/ 97.5)
+    }
+  }
+  @supports (margin-left:clamp(-2.5rem ,-0.9935897436rem + -1.2820512821vw ,-1.25rem)) {
+    .title--margin {
+      margin-left: clamp(-2.5rem ,-.9935897436rem + -1.2820512821vw ,-1.25rem)
+    }
+  }
+  @supports not (margin-left:clamp(-2.5rem ,-0.9935897436rem + -1.2820512821vw ,-1.25rem)) {
+    .title--margin {
+      margin-left: calc(-1.25rem + -1.25 * (100vw - 20rem)/ 97.5)
+    }
+  }
+  @supports (padding-top:clamp(1.25rem ,0.9294871795rem + 1.6025641026vw ,2.8125rem)) {
+    [class*=__title] {
+      padding-top: clamp(1.25rem ,.9294871795rem + 1.6025641026vw ,2.8125rem)
+    }
+  }
+  @supports not (padding-top:clamp(1.25rem ,0.9294871795rem + 1.6025641026vw ,2.8125rem)) {
+    [class*=__title] {
+      padding-top: calc(1.25rem + 1.5625 * (100vw - 20rem)/ 97.5)
+    }
+  }
+  @supports (padding-bottom:clamp(1.25rem ,0.9294871795rem + 1.6025641026vw ,2.8125rem)) {
+    [class*=__title] {
+      padding-bottom: clamp(1.25rem ,.9294871795rem + 1.6025641026vw ,2.8125rem)
+    }
+  }
+  @supports not (padding-bottom:clamp(1.25rem ,0.9294871795rem + 1.6025641026vw ,2.8125rem)) {
+    [class*=__title] {
+      padding-bottom: calc(1.25rem + 1.5625 * (100vw - 20rem)/ 97.5)
+    }
+  }
+  @supports (padding-left:clamp(1.25rem ,1.1217948718rem + 0.641025641vw ,1.875rem)) {
+    [class*=__title] {
+      padding-left: clamp(1.25rem ,1.1217948718rem + .641025641vw ,1.875rem)
+    }
+  }
+  @supports not (padding-left:clamp(1.25rem ,1.1217948718rem + 0.641025641vw ,1.875rem)) {
+    [class*=__title] {
+      padding-left: calc(1.25rem + .625 * (100vw - 20rem)/ 97.5)
+    }
+  }
+  @supports (padding-right:clamp(1.25rem ,1.1217948718rem + 0.641025641vw ,1.875rem)) {
+    [class*=__title] {
+      padding-right: clamp(1.25rem ,1.1217948718rem + .641025641vw ,1.875rem)
+    }
+  }
+  @supports not (padding-right:clamp(1.25rem ,1.1217948718rem + 0.641025641vw ,1.875rem)) {
+    [class*=__title] {
+      padding-right: calc(1.25rem + .625 * (100vw - 20rem)/ 97.5)
     }
   }
   @supports (padding-top:clamp(1.25rem ,0.8653846154rem + 1.9230769231vw ,3.125rem)) {
@@ -948,6 +1250,26 @@ body {
       padding-bottom: calc(.625rem + .625 * (100vw - 20rem)/ 97.5)
     }
   }
+  @supports (padding-top:clamp(0.625rem ,0.4967948718rem + 0.641025641vw ,1.25rem)) {
+    .page__submit {
+      padding-top: clamp(.625rem ,.4967948718rem + .641025641vw ,1.25rem)
+    }
+  }
+  @supports not (padding-top:clamp(0.625rem ,0.4967948718rem + 0.641025641vw ,1.25rem)) {
+    .page__submit {
+      padding-top: calc(.625rem + .625 * (100vw - 20rem)/ 97.5)
+    }
+  }
+  @supports (padding-bottom:clamp(0.625rem ,0.4967948718rem + 0.641025641vw ,1.25rem)) {
+    .page__submit {
+      padding-bottom: clamp(.625rem ,.4967948718rem + .641025641vw ,1.25rem)
+    }
+  }
+  @supports not (padding-bottom:clamp(0.625rem ,0.4967948718rem + 0.641025641vw ,1.25rem)) {
+    .page__submit {
+      padding-bottom: calc(.625rem + .625 * (100vw - 20rem)/ 97.5)
+    }
+  }
   @supports (padding-top:clamp(1.25rem ,0.9294871795rem + 1.6025641026vw ,2.8125rem)) {
     .hero__body {
       padding-top: clamp(1.25rem ,.9294871795rem + 1.6025641026vw ,2.8125rem)
@@ -1028,64 +1350,54 @@ body {
       padding-left: calc(1.25rem + .625 * (100vw - 20rem)/ 97.5)
     }
   }
+  @supports (padding-right:clamp(1.25rem ,1.1217948718rem + 0.641025641vw ,1.875rem)) {
+    .career__body {
+      padding-right: clamp(1.25rem ,1.1217948718rem + .641025641vw ,1.875rem)
+    }
+  }
+  @supports not (padding-right:clamp(1.25rem ,1.1217948718rem + 0.641025641vw ,1.875rem)) {
+    .career__body {
+      padding-right: calc(1.25rem + .625 * (100vw - 20rem)/ 97.5)
+    }
+  }
   @supports (padding-top:clamp(1.25rem ,0.9294871795rem + 1.6025641026vw ,2.8125rem)) {
-    .career__title {
+    .why__body {
       padding-top: clamp(1.25rem ,.9294871795rem + 1.6025641026vw ,2.8125rem)
     }
   }
   @supports not (padding-top:clamp(1.25rem ,0.9294871795rem + 1.6025641026vw ,2.8125rem)) {
-    .career__title {
+    .why__body {
       padding-top: calc(1.25rem + 1.5625 * (100vw - 20rem)/ 97.5)
     }
   }
   @supports (padding-bottom:clamp(1.25rem ,0.9294871795rem + 1.6025641026vw ,2.8125rem)) {
-    .career__title {
+    .why__body {
       padding-bottom: clamp(1.25rem ,.9294871795rem + 1.6025641026vw ,2.8125rem)
     }
   }
   @supports not (padding-bottom:clamp(1.25rem ,0.9294871795rem + 1.6025641026vw ,2.8125rem)) {
-    .career__title {
+    .why__body {
       padding-bottom: calc(1.25rem + 1.5625 * (100vw - 20rem)/ 97.5)
     }
   }
   @supports (padding-left:clamp(1.25rem ,1.1217948718rem + 0.641025641vw ,1.875rem)) {
-    .career__title {
+    .why__body {
       padding-left: clamp(1.25rem ,1.1217948718rem + .641025641vw ,1.875rem)
     }
   }
   @supports not (padding-left:clamp(1.25rem ,1.1217948718rem + 0.641025641vw ,1.875rem)) {
-    .career__title {
+    .why__body {
       padding-left: calc(1.25rem + .625 * (100vw - 20rem)/ 97.5)
     }
   }
-  @supports (padding-top:clamp(1.875rem ,1.6185897436rem + 1.2820512821vw ,3.125rem)) {
-    .why__title {
-      padding-top: clamp(1.875rem ,1.6185897436rem + 1.2820512821vw ,3.125rem)
+  @supports (padding-right:clamp(1.25rem ,1.1217948718rem + 0.641025641vw ,1.875rem)) {
+    .why__body {
+      padding-right: clamp(1.25rem ,1.1217948718rem + .641025641vw ,1.875rem)
     }
   }
-  @supports not (padding-top:clamp(1.875rem ,1.6185897436rem + 1.2820512821vw ,3.125rem)) {
-    .why__title {
-      padding-top: calc(1.875rem + 1.25 * (100vw - 20rem)/ 97.5)
-    }
-  }
-  @supports (padding-bottom:clamp(1.875rem ,1.6185897436rem + 1.2820512821vw ,3.125rem)) {
-    .why__title {
-      padding-bottom: clamp(1.875rem ,1.6185897436rem + 1.2820512821vw ,3.125rem)
-    }
-  }
-  @supports not (padding-bottom:clamp(1.875rem ,1.6185897436rem + 1.2820512821vw ,3.125rem)) {
-    .why__title {
-      padding-bottom: calc(1.875rem + 1.25 * (100vw - 20rem)/ 97.5)
-    }
-  }
-  @supports (padding-left:clamp(1.25rem ,0.7371794872rem + 2.5641025641vw ,3.75rem)) {
-    .why__title--padding {
-      padding-left: clamp(1.25rem ,.7371794872rem + 2.5641025641vw ,3.75rem)
-    }
-  }
-  @supports not (padding-left:clamp(1.25rem ,0.7371794872rem + 2.5641025641vw ,3.75rem)) {
-    .why__title--padding {
-      padding-left: calc(1.25rem + 2.5 * (100vw - 20rem)/ 97.5)
+  @supports not (padding-right:clamp(1.25rem ,1.1217948718rem + 0.641025641vw ,1.875rem)) {
+    .why__body {
+      padding-right: calc(1.25rem + .625 * (100vw - 20rem)/ 97.5)
     }
   }
   @supports (gap:clamp(1.25rem ,0.9935897436rem + 1.2820512821vw ,2.5rem)) {
@@ -1136,6 +1448,16 @@ body {
   @supports not (padding-bottom:clamp(1.25rem ,0.9294871795rem + 1.6025641026vw ,2.8125rem)) {
     .benefits__body {
       padding-bottom: calc(1.25rem + 1.5625 * (100vw - 20rem)/ 97.5)
+    }
+  }
+  @supports (padding-left:clamp(1.25rem ,1.1217948718rem + 0.641025641vw ,1.875rem)) {
+    .benefits__body {
+      padding-left: clamp(1.25rem ,1.1217948718rem + .641025641vw ,1.875rem)
+    }
+  }
+  @supports not (padding-left:clamp(1.25rem ,1.1217948718rem + 0.641025641vw ,1.875rem)) {
+    .benefits__body {
+      padding-left: calc(1.25rem + .625 * (100vw - 20rem)/ 97.5)
     }
   }
   @supports (padding-right:clamp(1.25rem ,1.1217948718rem + 0.641025641vw ,1.875rem)) {
@@ -1149,63 +1471,43 @@ body {
     }
   }
   @supports (padding-top:clamp(1.25rem ,0.9294871795rem + 1.6025641026vw ,2.8125rem)) {
-    .benefits__title {
+    .enrollment__body {
       padding-top: clamp(1.25rem ,.9294871795rem + 1.6025641026vw ,2.8125rem)
     }
   }
   @supports not (padding-top:clamp(1.25rem ,0.9294871795rem + 1.6025641026vw ,2.8125rem)) {
-    .benefits__title {
+    .enrollment__body {
       padding-top: calc(1.25rem + 1.5625 * (100vw - 20rem)/ 97.5)
     }
   }
   @supports (padding-bottom:clamp(1.25rem ,0.9294871795rem + 1.6025641026vw ,2.8125rem)) {
-    .benefits__title {
+    .enrollment__body {
       padding-bottom: clamp(1.25rem ,.9294871795rem + 1.6025641026vw ,2.8125rem)
     }
   }
   @supports not (padding-bottom:clamp(1.25rem ,0.9294871795rem + 1.6025641026vw ,2.8125rem)) {
-    .benefits__title {
+    .enrollment__body {
       padding-bottom: calc(1.25rem + 1.5625 * (100vw - 20rem)/ 97.5)
     }
   }
   @supports (padding-left:clamp(1.25rem ,1.1217948718rem + 0.641025641vw ,1.875rem)) {
-    .benefits__title {
+    .enrollment__body {
       padding-left: clamp(1.25rem ,1.1217948718rem + .641025641vw ,1.875rem)
     }
   }
   @supports not (padding-left:clamp(1.25rem ,1.1217948718rem + 0.641025641vw ,1.875rem)) {
-    .benefits__title {
+    .enrollment__body {
       padding-left: calc(1.25rem + .625 * (100vw - 20rem)/ 97.5)
     }
   }
-  @supports (padding-top:clamp(1.875rem ,1.6185897436rem + 1.2820512821vw ,3.125rem)) {
-    .enrollment__title {
-      padding-top: clamp(1.875rem ,1.6185897436rem + 1.2820512821vw ,3.125rem)
+  @supports (padding-right:clamp(1.25rem ,1.1217948718rem + 0.641025641vw ,1.875rem)) {
+    .enrollment__body {
+      padding-right: clamp(1.25rem ,1.1217948718rem + .641025641vw ,1.875rem)
     }
   }
-  @supports not (padding-top:clamp(1.875rem ,1.6185897436rem + 1.2820512821vw ,3.125rem)) {
-    .enrollment__title {
-      padding-top: calc(1.875rem + 1.25 * (100vw - 20rem)/ 97.5)
-    }
-  }
-  @supports (padding-bottom:clamp(1.875rem ,1.6185897436rem + 1.2820512821vw ,3.125rem)) {
-    .enrollment__title {
-      padding-bottom: clamp(1.875rem ,1.6185897436rem + 1.2820512821vw ,3.125rem)
-    }
-  }
-  @supports not (padding-bottom:clamp(1.875rem ,1.6185897436rem + 1.2820512821vw ,3.125rem)) {
-    .enrollment__title {
-      padding-bottom: calc(1.875rem + 1.25 * (100vw - 20rem)/ 97.5)
-    }
-  }
-  @supports (padding-left:clamp(1.25rem ,0.7371794872rem + 2.5641025641vw ,3.75rem)) {
-    .enrollment__title--padding {
-      padding-left: clamp(1.25rem ,.7371794872rem + 2.5641025641vw ,3.75rem)
-    }
-  }
-  @supports not (padding-left:clamp(1.25rem ,0.7371794872rem + 2.5641025641vw ,3.75rem)) {
-    .enrollment__title--padding {
-      padding-left: calc(1.25rem + 2.5 * (100vw - 20rem)/ 97.5)
+  @supports not (padding-right:clamp(1.25rem ,1.1217948718rem + 0.641025641vw ,1.875rem)) {
+    .enrollment__body {
+      padding-right: calc(1.25rem + .625 * (100vw - 20rem)/ 97.5)
     }
   }
   @supports (gap:clamp(1.25rem ,0.9935897436rem + 1.2820512821vw ,2.5rem)) {
@@ -1268,12 +1570,80 @@ body {
       padding-left: calc(1.25rem + .625 * (100vw - 20rem)/ 97.5)
     }
   }
+  @supports (padding-right:clamp(1.25rem ,1.1217948718rem + 0.641025641vw ,1.875rem)) {
+    .contact__body {
+      padding-right: clamp(1.25rem ,1.1217948718rem + .641025641vw ,1.875rem)
+    }
+  }
+  @supports not (padding-right:clamp(1.25rem ,1.1217948718rem + 0.641025641vw ,1.875rem)) {
+    .contact__body {
+      padding-right: calc(1.25rem + .625 * (100vw - 20rem)/ 97.5)
+    }
+  }
+  @supports (gap:clamp(1.25rem ,0.9935897436rem + 1.2820512821vw ,2.5rem)) {
+    .submit__list {
+      gap: clamp(1.25rem ,.9935897436rem + 1.2820512821vw ,2.5rem)
+    }
+  }
+  @supports not (gap:clamp(1.25rem ,0.9935897436rem + 1.2820512821vw ,2.5rem)) {
+    .submit__list {
+      gap: calc(1.25rem + 1.25 * (100vw - 20rem)/ 97.5)
+    }
+  }
+  @supports (padding-top:clamp(1.25rem ,0.8653846154rem + 1.9230769231vw ,3.125rem)) {
+    .submit__info {
+      padding-top: clamp(1.25rem ,.8653846154rem + 1.9230769231vw ,3.125rem)
+    }
+  }
+  @supports not (padding-top:clamp(1.25rem ,0.8653846154rem + 1.9230769231vw ,3.125rem)) {
+    .submit__info {
+      padding-top: calc(1.25rem + 1.875 * (100vw - 20rem)/ 97.5)
+    }
+  }
+  @supports (padding-bottom:clamp(1.25rem ,0.8653846154rem + 1.9230769231vw ,3.125rem)) {
+    .submit__info {
+      padding-bottom: clamp(1.25rem ,.8653846154rem + 1.9230769231vw ,3.125rem)
+    }
+  }
+  @supports not (padding-bottom:clamp(1.25rem ,0.8653846154rem + 1.9230769231vw ,3.125rem)) {
+    .submit__info {
+      padding-bottom: calc(1.25rem + 1.875 * (100vw - 20rem)/ 97.5)
+    }
+  }
+  @supports (padding-left:clamp(1.25rem ,0.7371794872rem + 2.5641025641vw ,3.75rem)) {
+    .submit__info {
+      padding-left: clamp(1.25rem ,.7371794872rem + 2.5641025641vw ,3.75rem)
+    }
+  }
+  @supports not (padding-left:clamp(1.25rem ,0.7371794872rem + 2.5641025641vw ,3.75rem)) {
+    .submit__info {
+      padding-left: calc(1.25rem + 2.5 * (100vw - 20rem)/ 97.5)
+    }
+  }
+  @supports (padding-right:clamp(1.25rem ,0.7371794872rem + 2.5641025641vw ,3.75rem)) {
+    .submit__info {
+      padding-right: clamp(1.25rem ,.7371794872rem + 2.5641025641vw ,3.75rem)
+    }
+  }
+  @supports not (padding-right:clamp(1.25rem ,0.7371794872rem + 2.5641025641vw ,3.75rem)) {
+    .submit__info {
+      padding-right: calc(1.25rem + 2.5 * (100vw - 20rem)/ 97.5)
+    }
+  }
 }
 @media (any-hover:hover) {
+  .button:hover {
+    background: url(../img/bgRed.svg) 0 0/cover no-repeat;
+    color: #377de5
+  }
   .text-red:hover {
     color: #377de5
   }
   .contact__link:hover {
     color: #ff4a4a
+  }
+  .submit__info:hover {
+    background: url(../img/bgRed.svg) 0 0/cover no-repeat;
+    color: #377de5
   }
 }
