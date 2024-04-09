@@ -1,4 +1,0 @@
-User-Agent: *
-Disallow: /
-
-Host: https://ev-klzn.github.io/trading/
