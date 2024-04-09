@@ -1,9 +1,4 @@
-User-Agent: Yandex
+User-Agent: *
 Disallow: /
-
-User-agent: *
-Allow: /
-Allow: /*.css
-Allow: /*.webp
 
 Host: https://ev-klzn.github.io/trading/
