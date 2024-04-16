@@ -122,9 +122,13 @@ textarea {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
   border-radius: 0!important;
+  font-size: 1.375rem;
+  padding-top: .625rem;
+  padding-bottom: .625rem;
+  padding-left: .625rem;
+  padding-right: .625rem;
   width: 100%;
   display: block;
-  padding: 0 20px;
   border: 1px solid rgba(255,255,255,.1294117647);
   caret-color: inherit
 }
@@ -156,8 +160,7 @@ textarea {
   opacity: 0
 }
 textarea.input {
-  resize: none;
-  padding: 0 0
+  resize: none
 }
 .ibg {
   width: 100%;
