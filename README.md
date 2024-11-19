@@ -1,3 +1,3 @@
 # trading
 
-https://ev-klzn.com/trading/
+https://webintersol.com/trading/
